@@ -60,10 +60,10 @@
         <!--            <artifactId>spring-cloud-starter-openfeign</artifactId>-->
         <!--        </dependency>-->
         <!-- 服务注册 -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
         <!-- 流量控制 -->
         <!--        <dependency>-->
         <!--            <groupId>com.alibaba.cloud</groupId>-->
@@ -89,7 +89,8 @@
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
-                <includes> <include>**/*.yml</include>
+                <includes>
+                    <include>**/*.yml</include>
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
                 </includes>
