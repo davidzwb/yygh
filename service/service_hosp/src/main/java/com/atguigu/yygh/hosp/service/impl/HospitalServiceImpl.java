@@ -97,11 +97,30 @@ public class HospitalServiceImpl implements HospitalService {
     this.setHospitalHosType(hospital);
     result.put("hospital", hospital);
 
-    //单独处理更直观
+    // 单独处理更直观
     result.put("bookingRule", hospital.getBookingRule());
-    //不需要重复返回
+    // 不需要重复返回
     hospital.setBookingRule(null);
     return result;
+  }
+
+  @Override
+  public Map<String, Object> item(String hoscode) {
+    Map<String, Object> result = new HashMap<>();
+    // 医院详情
+    Hospital hospital = this.getByHoscode(hoscode);
+    this.setHospitalHosType(hospital);
+    result.put("hospital", hospital);
+    // 预约规则
+    result.put("bookingRule", hospital.getBookingRule());
+    // 不需要重复返回
+    hospital.setBookingRule(null);
+    return result;
+  }
+
+  @Override
+  public List<Hospital> findByHosname(String hosname) {
+    return hospitalRepository.findHospitalByHosnameLike(hosname);
   }
 
   private void setHospitalHosType(Hospital hospital) {
